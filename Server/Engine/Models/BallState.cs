@@ -8,6 +8,9 @@ namespace Engine.Models
     {
         public double Size { get; set; }
         public double Speed { get; set; }
+        public double Speedup { get; set; }
         public double DirectionAngle { get; set; }
+        public double PositionX { get; set; }
+        public double PositionY { get; set; }
     }
 }

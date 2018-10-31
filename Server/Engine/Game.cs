@@ -28,10 +28,19 @@ namespace Engine
             // Пересчет состояния игры
         }
 
-        private static BallState CalculateNextBallState(BallState ballState, GameState gameState, GameRules gameRules, double secondsDelta)
+        private static BallState CalculateNextBallState(BallState ballState, GameState gameState, double secondsDelta)
         {
-            var movingDelta = secondsDelta * ballState.Speed + gameRules.BallSpeedup * Math.Pow(secondsDelta, 2);
+            var newBs = ballState;
+            var nextDirectionAngle = newBs.DirectionAngle;
 
+            var movingDelta = secondsDelta * ballState.Speed + ballState.Speedup * Math.Pow(secondsDelta, 2);
+            var directionRad = ballState.DirectionAngle * Math.PI / 180;
+            var dy = movingDelta * Math.Cos(directionRad);
+            var dx = movingDelta * Math.Sin(Math.PI - directionRad);
+
+            var nextPosX = newBs
+
+            if ()
         }
 
         private static PlayerState CalculeteNextPlayerState(PlayerState playerState, PlayerAction[] actions, GameState gameState, double secondsDelta)
